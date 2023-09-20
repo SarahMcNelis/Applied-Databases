@@ -1,0 +1,10 @@
+SELECT personID, personname, age,
+CASE 
+	WHEN age < 20 THEN "Visa-1"
+	WHEN age >= 20 AND age <= 29 THEN "Visa-2"
+	WHEN age >= 30 AND age <= 39 THEN "Visa-3"
+	WHEN age >= 40 AND age <= 69 THEN "Visa-4"
+	ELSE "Visa-5"
+END AS "Visa"
+FROM person
+ORDER BY Visa ASC, personname ASC;

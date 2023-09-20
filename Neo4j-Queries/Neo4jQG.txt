@@ -1,0 +1,4 @@
+MATCH ({name:"Barbara Smith"})<-[:MOTHER_OF *2]-(gm)
+MATCH (gm)-[]->(h:Hobby)<-[]-(p:Person)
+RETURN p.name AS Names, p.age AS Ages
+ORDER BY p.name, p.age ASC

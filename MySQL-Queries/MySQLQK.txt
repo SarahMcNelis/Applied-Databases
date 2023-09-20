@@ -1,0 +1,7 @@
+SELECT cl.countrycode AS "CountryCode", sum(cl.percentage) AS "Not Official Total"
+FROM country co
+INNER JOIN countrylanguage cl
+ON cl.countrycode = co.code
+WHERE cl.isofficial = "f" AND co.region = "Caribbean"
+GROUP BY cl.countrycode
+ORDER BY cl.countrycode ASC;

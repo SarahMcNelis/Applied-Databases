@@ -1,0 +1,3 @@
+MATCH (p:Person)-[ r:HAS_HOBBY]->(h:Hobby) 
+RETURN DISTINCT h.name AS Hobby, count(p) AS People
+ORDER BY count(p), h.name ASC

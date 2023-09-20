@@ -1,0 +1,4 @@
+MATCH (p:Person)
+OPTIONAL MATCH (p)<-[r:MARRIED_TO]->(sp) 
+RETURN p.name AS Name, sp.name AS Spouse
+ORDER BY p.name, sp.name ASC

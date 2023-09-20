@@ -1,0 +1,4 @@
+MATCH (p) 
+WHERE p.salary < 50000 
+SET p.salary = round(p.salary)
+RETURN collect(toInteger(p.salary)) AS Salaries_LT_50k

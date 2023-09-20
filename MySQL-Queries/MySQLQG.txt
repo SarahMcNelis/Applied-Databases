@@ -1,0 +1,10 @@
+SELECT cy.name, h.dateArrived, co.name
+FROM city cy
+INNER JOIN country co
+ON co.code = cy.countrycode
+INNER JOIN hasvisitedcity h
+ON cy.id = h.cityid
+INNER JOIN person p
+ON h.personid = p.personid
+WHERE p.personname = "Sara"
+ORDER BY cy.name ASC;

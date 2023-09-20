@@ -1,0 +1,6 @@
+SELECT co.name AS Name, substring(co.governmentForm, 1, 10) AS Government 
+FROM country co
+INNER JOIN (SELECT countrycode, language, isofficial FROM countrylanguage WHERE IsOfficial = "T") cl
+ON co.code = cl.countrycode
+WHERE cl.language = "German" 
+ORDER BY co.name ASC;

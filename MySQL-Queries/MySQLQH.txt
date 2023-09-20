@@ -1,0 +1,7 @@
+SELECT co.Continent, co.Name, co.Population
+FROM Country co
+INNER JOIN (SELECT MAX(Population) AS Population FROM Country GROUP BY Continent) AS new
+ON co.Population = new.Population
+WHERE co.Population > 0
+GROUP BY co.Continent
+ORDER BY new.Population DESC, co.Name ASC;

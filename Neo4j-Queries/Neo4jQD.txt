@@ -1,0 +1,2 @@
+MATCH (p:Person) WHERE EXISTS (p.salary)
+RETURN count(p.salary) AS People_on_a_Salary
